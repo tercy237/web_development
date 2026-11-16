@@ -12,7 +12,7 @@
   font-size: 15px;
 }
 
-.about-intro h1 {
+.about-intro h2 {
   margin: 0 0 18px;
   color: var(--red);
   font-size: clamp(28px, 9vw, 44px);
@@ -168,11 +168,11 @@
   }
 
   .about-contact p {
-    font-size: 23px;
+    font-size: 21px;
   }
 
   .about-contact a {
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .about-logo {
@@ -184,7 +184,7 @@
   }
 
   .about-logo p {
-    font-size: 27px;
+    font-size: 25px;
   }
 
   .about-logo img {
