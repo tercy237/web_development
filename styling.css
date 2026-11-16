@@ -1,4 +1,5 @@
-/* Home page sections. Load after base.css. */
+/* CC Global Summit 2015 - HOME page styles (home.html / index.html)
+   Load after base.css. */
 
 /* ---------- Hero ---------- */
 
@@ -114,7 +115,7 @@
   background: var(--red-dark);
 }
 
-/* ---------- Speakers ---------- */
+/* ---------- Featured speakers ---------- */
 
 .speakers {
   padding: 44px 0;
@@ -129,6 +130,7 @@
   display: grid;
   grid-template-columns: 62px 1fr;
   column-gap: 14px;
+  align-items: start;
   padding: 14px;
   border: 1px solid var(--line);
 }
@@ -160,48 +162,50 @@
   line-height: 1.5;
 }
 
-.speaker details {
-  grid-column: 1 / -1;
-  margin-top: 12px;
-}
+/* More button: on mobile and tablet only the first two speakers show;
+   the button reveals the rest. On desktop all speakers show. */
 
-.speaker summary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  padding: 7px;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  list-style: none;
-  cursor: pointer;
-}
-
-.speaker summary::-webkit-details-marker {
+.speaker--extra {
   display: none;
 }
 
-.speaker summary::after {
-  content: "\2304";
-  transition: transform 160ms ease;
+.speaker-list.is-open .speaker--extra {
+  display: grid;
 }
 
-.speaker details[open] summary::after {
-  transform: rotate(180deg);
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.speaker summary:hover {
+.more-btn:hover {
   border-color: var(--red);
   color: var(--red);
 }
 
-.speaker details p {
-  margin: 10px 0 0;
-  font-size: 11px;
-  color: var(--muted);
+.more-btn img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  transition: transform 160ms ease;
+}
+
+.more-btn[aria-expanded="true"] img {
+  transform: rotate(180deg);
 }
 
 /* ---------- Tablet and desktop (min-width: 768px) ---------- */
@@ -238,10 +242,15 @@
     padding: 80px 0;
   }
 
+  .program .container {
+    text-align: center;
+  }
+
   .program-item {
     display: block;
     min-height: 230px;
     padding: 22px 16px;
+    text-align: left;
     transition: background-color 160ms ease, transform 160ms ease;
   }
 
@@ -269,10 +278,6 @@
   .btn-join {
     display: inline-block;
     padding: 16px 28px;
-  }
-
-  .program .container {
-    text-align: center;
   }
 
   .speakers {
@@ -316,6 +321,13 @@
     padding: 20px 14px;
   }
 
+  .more-btn {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 12px;
+  }
+
   .speaker-list {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -332,10 +344,55 @@
     gap: 12px;
   }
 
+  /* Desktop-only decorative images. Save them in assets/images/
+     (or change the names). A missing file is simply not shown. */
+  .hero {
+    background-image:
+      url("./assets/images/hero-dots.png"),
+      url("./assets/images/hero-shapes.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 8% top 25%, left 6% bottom 12%;
+    background-size: 120px auto, 90px auto;
+  }
+
+  /* All speakers always visible on desktop, so no More button */
+  .speaker--extra {
+    display: grid;
+  }
+
+  .more-btn {
+    display: none;
+  }
+
+  /* Speakers: two columns, borderless rows, checkered corner on each photo */
   .speaker-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 36px 60px;
     max-width: 920px;
     margin: 0 auto;
+  }
+
+  .speaker {
+    position: relative;
+    grid-template-columns: 96px 1fr;
+    padding: 10px 0 0 10px;
+    border: 0;
+  }
+
+  .speaker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: repeating-conic-gradient(var(--ink) 0 25%, transparent 0 50%) 0 0 / 14px 14px;
+  }
+
+  .speaker img {
+    position: relative;
+    z-index: 1;
+    width: 96px;
+    height: 96px;
   }
 }
