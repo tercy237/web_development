@@ -25,4 +25,18 @@ if (menuButton && navigation) {
       menuButton.focus();
     }
   });
+  // CC Global Summit 2015 - "More" button for the speakers (mobile and tablet)
+
+const moreButton = document.querySelector(".more-btn");
+const speakerList = document.querySelector("#speaker-list");
+
+if (moreButton && speakerList) {
+  const label = moreButton.querySelector(".more-label");
+
+  moreButton.addEventListener("click", () => {
+    const isOpen = speakerList.classList.toggle("is-open");
+    moreButton.setAttribute("aria-expanded", String(isOpen));
+    if (label) label.textContent = isOpen ? "Less" : "More";
+  });
+}
 }

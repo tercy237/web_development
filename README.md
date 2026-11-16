@@ -4,7 +4,7 @@
 
   <br/>
 
-  <h1><b>Hello Tercy_portfolio</b></h1>
+  <h1><b>Hello Capstone Project</b></h1>
 
 </div>
 
@@ -27,7 +27,7 @@
 - [:pray: Acknowledgements](#acknowledgements)
 - [:memo: License](#license)
 
-# :book:My portfolio<a name="about-project"></a>
+# :book:Capstone Project<a name="about-project"></a>
 
 This is the first technical Microverse project it tests more on Git, GitHub, GitHub Workflow and Linters.
 
@@ -66,7 +66,7 @@ Clone this repository to your desired folder:
 
 sh
   cd my-folder
-  git clone https://github.com/tercy237/Tercy-underscore-portfolio
+  git clone https://github.com/tercy237/web_development
 
 
 ### Install
@@ -104,7 +104,7 @@ sh
 
 :bust_in_silhouette: *Tercy mbiydzenyuy*
 
-- GitHub: [@tercy_mbiydzenyuy]https://github.com/tercy237/Tercy-underscore-portfolio
+- GitHub: [@tercy_mbiydzenyuy]https://https://github.com/tercy237/web_development
 
  FUTURE FEATURES
 
@@ -123,6 +123,7 @@ I will like to thank microverse and all the students i've collaborated with
 
 ## :memo: License <a name="license"></a>
 
-This project is [MIT](./license.md) licensed.rcy-underscore-portfolio
-in this i will be buildind my portfolio website
+This project is licensed under the [license file](./license.md).
+
+See [license.md](./license.md) for the full license terms.
 
